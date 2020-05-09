@@ -1,0 +1,10 @@
+@import "~@nativescript/theme/css/core.css";
+@import '~@nativescript/theme/css/ruby.css';
+
+
+
+Label {
+    font-size: 17;
+}
+
+

@@ -1,0 +1,45 @@
+<ActionBar [title]="'Details of ' + name"></ActionBar>
+
+<GridLayout rows="auto,,auto,auto,*" columns="*,*" *ngIf="pokemon">
+
+    <!--<Label class="text-center" [text]="name" row="0" col="0" colSpan="2"></Label>-->
+    
+
+    <Image [src]="pokemon.sprites.front_default" row="1" col="0"></Image>
+    <Image [src]="pokemon.sprites.front_shiny" row="1" col="1"></Image>
+
+    <div class ="text-center">
+        <Label class="footnote" text="Normal" row="2" col="0" ></Label>
+        <Label class="footnote" text="Shiny"  row="2" col="1"></Label>
+        </div>
+    
+    <GridLayout rows="auto, *,auto" columns="*, *" row="3" col="0" colSpan="2">
+        <Label text="Type(s)" row="0" col="0"></Label>
+
+        <Label [text]="pokemon.types[0].type.name + 
+        (pokemon.types[1] ? '/' + pokemon.types[1].type.name : '' )"
+        row="0" col="1"></Label>
+
+        <Label text="1, 0" row="1" col="0"></Label>
+        <Label text="1, 1" row="1" col="1"></Label>
+
+        <div class ="text-center">
+            <Label class="footnote" text="modified by Eugene 52170334" row="2" col="0" colSpan="2"></Label>
+        </div>
+        
+        
+        
+
+
+    </GridLayout>
+
+
+</GridLayout>
+
+pokemon.types[0].type.name
+pokemon.stats[5].base_stat //hp
+pokemon.stats[4].base_stat //att
+pokemon.stats[3].base_stat //def
+
+pokemon.moves[0].move.name //move 1
+pokemon.moves[1].move.name //move 2
