@@ -3,12 +3,17 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
+import { LoginComponent } from "./login/login.component";
 import { PokemonComponent } from "./pokemon/pokemon.component";
 import { PokemonDetailComponent } from "./pokemon/pokemon-detail.component";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 
-
+import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import Theme from "@nativescript/theme";
+import { ShellComponent } from "./shell/shell.component";
+
 Theme.setMode(Theme.Dark); // Or Theme.Light
 @NgModule({
     bootstrap: [
@@ -17,13 +22,18 @@ Theme.setMode(Theme.Dark); // Or Theme.Light
     imports: [
         NativeScriptModule,
         AppRoutingModule,
-        NativeScriptHttpClientModule
+        NativeScriptHttpClientModule,
+        NativeScriptFormsModule,
+        NativeScriptUISideDrawerModule,
+        ReactiveFormsModule,
+        
     ],
     declarations: [
         AppComponent,
         PokemonComponent,
-        PokemonDetailComponent//,
-        //NativeScriptHttpClientModule
+        PokemonDetailComponent,
+        LoginComponent,
+        ShellComponent
     ],
     providers: [],
     schemas: [
