@@ -4,8 +4,8 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { PokemonComponent } from "./pokemon/pokemon.component";
-import { PokemonDetailComponent } from "./pokemon/pokemon-detail.component";
+import { CoronaComponent } from "./corona/corona.component";
+import { CoronaDetailComponent } from "./corona/corona-detail.component";
 import { NativeScriptHttpClientModule } from "nativescript-angular/http-client";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { ReactiveFormsModule } from '@angular/forms';
@@ -14,7 +14,7 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import Theme from "@nativescript/theme";
 import { ShellComponent } from "./shell/shell.component";
 
-Theme.setMode(Theme.Dark); // Or Theme.Light
+Theme.setMode(Theme.Light); // Or Theme.Light
 @NgModule({
     bootstrap: [
         AppComponent
@@ -30,8 +30,8 @@ Theme.setMode(Theme.Dark); // Or Theme.Light
     ],
     declarations: [
         AppComponent,
-        PokemonComponent,
-        PokemonDetailComponent,
+        CoronaComponent,
+        CoronaDetailComponent,
         LoginComponent,
         ShellComponent
     ],

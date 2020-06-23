@@ -1,10 +1,10 @@
 @import "~@nativescript/theme/css/core.css";
-@import '~@nativescript/theme/css/ruby.css';
-
-
+@import '~@nativescript/theme/css/blue.css';
 
 Label {
     font-size: 17;
 }
+
+
 
 

@@ -1,8 +1,25 @@
-<GridLayout rows="*, auto, *" columns="*">
+<GridLayout rows="*,*, auto, *" columns="*">
+    
+    <!--Tittle app-->
+    <StackLayout row="1" col=0 class=p-X-20;>
+      <Label class="h1 text-center tittle" row="0" col="0" colSpan="2"
+      style="padding: 10px;
+      font: Helvetica Regular;
+      font-size: 29%;"
+      text="Welcome to CoronoStats!"
+      ></Label>
+      <Label class="h1 text-center tittle" row="0" col="0" colSpan="2"
+      style="padding: 0px;
+      font: Helvetica Regular;
+      font-size: 15%;"
+      text="Daily Updates for Corona Virus"
+      ></Label>
+    </StackLayout>
+    
     <!-- p: padding, x: horizontal, 20: 20px -->
-    <StackLayout row="1" col="0" class="p-x-20">
-      <Button
-        class="-primary"
+    <StackLayout row="2" col="0" class="p-x-20">
+       <Button
+        class="-primary -rounded-lg"
         text="Login with Google"
         (tap)="login()"
         [isEnabled]="!loginForm.invalid"

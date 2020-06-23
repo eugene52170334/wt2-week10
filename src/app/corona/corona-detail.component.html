@@ -1,0 +1,436 @@
+<ActionBar title="Details of Indonesia"></ActionBar>
+
+<GridLayout>
+    <ListView [items]="province"> 
+        <ng-template let-item="province" let-i="index">
+            <StackLayout >
+                <GridLayout style="padding-bottom:70px"rows="auto,auto,auto" columns="*,*,*">
+                    <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[i].attributes.Provinsi"></Label>
+                    <Label class="text-center" row="1" col="0" text="Positif"></Label>
+                    <Label class="text-center" row="2" col="0" [text]="province[i].attributes.Kasus_Posi"></Label>
+                    <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+                    <Label class="text-center" row="2" col="1" [text]="province[i].attributes.Kasus_Semb"></Label>
+                    <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+                    <Label class="text-center" row="2" col="2" [text]="province[i].attributes.Kasus_Meni"></Label>
+                </GridLayout>   
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
+
+<!--
+<GridLayout rows="auto,auto,auto,auto,auto,auto,auto,auto" columns="*,*,*">
+
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="0" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[0].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[0].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[0].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[0].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="2" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[2].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[2].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[2].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[2].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="3" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[3].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[3].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[3].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[3].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="4" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[4].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[4].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[4].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[4].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="5" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[5].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[5].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[5].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[5].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="6" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[6].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[6].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[6].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[6].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="7" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[7].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[7].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[7].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[7].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="8" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[8].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[8].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[8].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[8].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+    <GridLayout 
+    style="border-width:10px; border-color:gray ; border-radius:3px; padding:30px"
+    rows="auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3" >
+        <Label class="text-center h1" row="0" col="0" colSpan="3" [text]="province[1].attributes.Provinsi"></Label>
+        <Label class="text-center" row="1" col="0" text="Positif"></Label>
+        <Label class="text-center" row="2" col="0" [text]="province[1].attributes.Kasus_Posi"></Label>
+        <Label class="text-center" row="1" col="1" text="Sembuh"></Label>
+        <Label class="text-center" row="2" col="1" [text]="province[1].attributes.Kasus_Semb"></Label>
+        <Label class="text-center" row="1" col="2" text="Meninggal"></Label>
+        <Label class="text-center" row="2" col="2" [text]="province[1].attributes.Kasus_Meni"></Label>
+    </GridLayout>
+
+
+</GridLayout>
+
+-->

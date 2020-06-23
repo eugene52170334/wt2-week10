@@ -1,0 +1,57 @@
+<ActionBar [title]="'Corona Stats in ' + indo[0].name">
+</ActionBar>
+
+<!--
+<GridLayout>
+    <ListView [items]="pokemons$ | async" (loadMoreItems)="loadMore()">
+        <ng-template let-pokemon="item">
+            <StackLayout>
+                <Label [nsRouterLink]="['/pokemon', pokemon.name]" [text]="pokemon.name"></Label>
+            </StackLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>
+-->
+<GridLayout rows="*,auto,*" columns="*,*,*">
+ 
+
+    <GridLayout style="padding:30px" rows="auto,auto,auto,auto,auto,auto,auto,auto,auto" columns="*,*,*" row="1" col="0" colSpan="3">
+
+    <Label  class="h1 text-center" row="0" col="1"
+    text="Positif"></Label>
+    <Label style="padding-bottom:120px"class="h1 text-center"row="1" col="1"
+    [text]="indo[0].positif"></Label>
+
+    <Label class="h1 text-center" row="2" col="1"
+    text="Sembuh"></Label>
+    <Label style="padding-bottom:120px" class="h1 text-center"row="3" col="1"
+    [text]="indo[0].sembuh"></Label>
+
+    <Label class="h1  text-center"row="4" col="0" colSpan="3"
+    text="Meninggal"></Label>
+    <Label class="h1 text-center"row="5" col="1"
+    [text]="indo[0].meninggal"></Label>
+    
+    
+    
+    <Button class="-primary -rounded-lg" row ="6" col="0" rowSpan="3" colSpan="3"
+     text="Lihat Semua Provinsi" [nsRouterLink]="['/indo/province' ]" ></Button>
+    
+    </GridLayout>
+
+    
+    <!--
+    <GridLayout row="1" col="1">
+        <ListView [items]="province$ | async" >
+            <ng-template let-pokemon="item">
+                <StackLayout>
+                    <Label [nsRouterLink]="['/pokemon', province.Provinsi]" [text]="'test '+ province[0].attributes.Provinsi"></Label>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout>
+    -->
+
+
+
+</GridLayout>
